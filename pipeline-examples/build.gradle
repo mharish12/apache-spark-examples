@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group = 'com.h12'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.spark', name: 'spark-core_2.13', version: '3.5.0'
+    implementation group: 'org.apache.spark', name: 'spark-streaming_2.13', version: '3.5.0'
+    implementation group: 'org.apache.spark', name: 'spark-streaming-kafka-0-10_2.13', version: '3.5.0'
+    implementation group: 'org.apache.spark', name: 'spark-sql_2.13', version: '3.5.0'
+    implementation group: 'org.apache.spark', name: 'spark-sql-kafka-0-10_2.13', version: '3.5.0'
+
+
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
